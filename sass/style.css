@@ -197,11 +197,18 @@ button {
 }
 .dropdown__menu--internal {
   width: 100%;
-  right: 110px;
+  right: 120px;
 }
-.dropdown__menu li {
+.dropdown__item {
   text-transform: none;
-  padding: 5px;
+  padding: 5px 10px;
+}
+.dropdown__item:hover {
+  background: #EAD3C5;
+  border-radius: 10px;
+}
+.dropdown__label {
+  cursor: pointer;
 }
 
 .table {

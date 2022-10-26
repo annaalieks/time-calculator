@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>Time calculator</title>
     <link rel="stylesheet" href="sass/style.css">
 </head>
+
 <body>
     <div class="main">
         <h1 class="title">Time between dates calculator</h1>
@@ -44,44 +46,44 @@
                     </div>
                 </div>
                 <div class="container--flex dropdown">
-                    <span>Time between</span> 
+                    <span>Time between</span>
                     <div>
                         <span class="result">100</span>
                         <button class="dropdown__btn">sec</button>
                         <ul class="dropdown__menu">
-                            <li class="dropdown__submenu">
+                            <li class="dropdown__submenu dropdown__item">
                                 <input type="radio" id="days" name="dropdown" hidden>
                                 <label class="dropdown__label" for="days">Days</label>
                                 <ul class="dropdown__menu dropdown__menu--internal">
-                                    <li>
+                                    <li class="dropdown__item">
                                         <input type="radio" id="all-days" name="dropdown" hidden>
                                         <label class="dropdown__label" for="days">All days (days)</label>
                                     </li>
-                                    <li>
+                                    <li class="dropdown__item">
                                         <input type="radio" id="business-days" name="dropdown" hidden>
                                         <label class="dropdown__label" for="days">Business days (bd)</label>
                                     </li>
-                                    <li>
+                                    <li class="dropdown__item">
                                         <input type="radio" id="weekends" name="dropdown" hidden>
                                         <label class="dropdown__label" for="days">Weekends (wknd)</label>
                                     </li>
                                 </ul>
                             </li>
-                            <li>
+                            <li class="dropdown__item">
                                 <input type="radio" id="hours" name="dropdown" hidden>
                                 <label class="dropdown__label" for="days">Hours (hrs)</label>
                             </li>
-                            <li>
+                            <li class="dropdown__item">
                                 <input type="radio" id="minutes" name="dropdown" hidden>
                                 <label class="dropdown__label" for="days">Minutes (min)</label>
                             </li>
-                            <li>
-                                <input type="radio" id="minutes" name="dropdown" hidden>
+                            <li class="dropdown__item">
+                                <input type="radio" id="seconds" name="dropdown" hidden>
                                 <label class="dropdown__label" for="days">Seconds (sec)</label>
                             </li>
                         </ul>
                     </div>
-                </div>   
+                </div>
             </div>
             <div class="container">
                 <table class="table">
@@ -169,4 +171,5 @@
         </svg>
     </div>
 </body>
+
 </html>
