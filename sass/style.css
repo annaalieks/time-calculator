@@ -192,10 +192,12 @@ button {
   border-radius: 10px;
   box-shadow: 6px 19px 23px 1px rgba(0, 0, 0, 0.15);
   position: absolute;
-  right: 20px;
+  right: 0;
+  z-index: 1;
 }
 .dropdown__menu--internal {
-  right: -110px;
+  width: 100%;
+  right: 110px;
 }
 .dropdown__menu li {
   text-transform: none;
