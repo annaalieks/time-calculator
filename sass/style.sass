@@ -1,0 +1,284 @@
+//FONTS
+
+@font-face
+    font-family: "Basis Grotesque Pro"
+    src: url("../fonts/BasisGrotesquePro-Regular.woff2") format("woff2"), url("./fonts/BasisGrotesquePro-Regular.woff") format("woff"), url("./fonts/BasisGrotesquePro-Regular.eot") format("embedded opentype"), url("./fonts/BasisGrotesquePro-Regular.ttf") format("truetype")
+    font-weight: 400
+    font-size: 16px
+    line-height: 24px
+    font-display: fallback
+
+@font-face
+    font-family: "Basis Grotesque Pro"
+    src: url("../fonts/BasisGrotesquePro-Bold.woff2") format("woff2"), url("./fonts/BasisGrotesquePro-Bold.woff") format("woff"), url("./fonts/BasisGrotesquePro-Bold.eot") format("embedded opentype"), url("./fonts/BasisGrotesquePro-Bold.ttf") format("truetype")
+    font-weight: 700
+    font-display: fallback
+
+@font-face
+    font-family: "Basis Grotesque Pro"
+    src: url("../fonts/BasisGrotesquePro-Light.woff2") format("woff2"), url("./fonts/BasisGrotesquePro-Light.woff") format("woff"), url("./fonts/BasisGrotesquePro-Light.eot") format("embedded opentype"), url("./fonts/BasisGrotesquePro-Light.ttf") format("truetype")
+    font-weight: 300
+    font-size: 16px
+    line-height: 24px
+    font-display: fallback
+
+//MIXINS
+
+@mixin font($font-weight: 400)
+    font-family: "Basis Grotesque Pro", system-ui
+    font-weight: $font-weight
+
+@mixin mediumscreens()
+    @media only screen and (min-width: 768px) and (max-width: 1200px)
+        @content
+
+@mixin largescreens()
+    @media only screen and (min-width: 1200px)
+        @content
+
+//VARIABLES
+
+$green: #419F6F
+$terracotta: #B35014
+$brown: #403832
+$grey: #E4DFDC
+$light-grey: #f2f2f2
+$peach: #EAD3C5
+
+//NORMALIZE
+
+*, *:before, *:after
+    box-sizing: border-box
+
+body
+    margin: 0
+    @include font
+    color: $brown
+    min-width: 450px
+
+li
+    list-style-type: none
+
+ul
+    margin: 0
+    padding: 0
+
+button
+    background: none
+    border: none
+    cursor: pointer
+
+// Main common
+
+.main
+    background-image: linear-gradient(to bottom right, $terracotta, $grey)
+    width: 100%
+    padding: 20px
+    background-size: cover
+
+.wrapper
+    width: 90%
+    margin: 20px auto 0
+
+.container
+    width: 100%
+    background-color: #FFF
+    border-radius: 10px
+    text-transform: uppercase
+    box-shadow: 6px 19px 23px 1px rgb(0 0 0 / .15)
+    &--flex
+        display: flex
+        align-items: center
+        justify-content: space-between
+        cursor: pointer
+    &--underlined
+        border-bottom: 1px solid $grey
+        padding: 20px
+    &--flex-end
+        display: flex
+        justify-content: flex-end
+    &--calendar
+        border: none
+        font: inherit
+        color: $brown
+        // &::-webkit-calendar-picker-indicator
+        //     display: none
+
+.heading
+    size: 20px
+    text-align: center
+    padding: 20px 10px
+    margin: 0
+
+// Title
+
+.title
+    text-align: center
+    background-color: #FFF
+    border-radius: 10px
+    @include font($font-weight: 700)
+    font-size: 30px
+    padding: 20px 20px
+    width: 90%
+    margin: 0 auto
+    text-transform: uppercase
+    box-shadow: 6px 19px 23px 1px rgb(0 0 0 / .15)
+
+// Calculator
+
+.calculator
+    margin-bottom: 20px
+
+.icon
+    width: 24px
+    height: 24px
+    color: $green
+    &:hover
+        color: $terracotta
+
+.radio
+    text-transform: none
+    padding-bottom: 10px
+    &__input
+        margin: 0
+        cursor: pointer
+        accent-color: $green
+    &__label
+        background: $green
+        color: #FFF
+        padding: 0 10px
+        border-radius: 10px
+        cursor: pointer
+        box-shadow: 1px 1px 10px 1px rgb(0 0 0 / .15)
+
+.result
+    font-weight: 700
+    font-size: 30px
+    color: $green
+
+.dropdown
+    padding: 20px
+    position: relative
+    &__btn
+        font-weight: 400
+        font-size: 30px
+        color: $green
+        &::after
+            content: ""
+            display: inline-block
+            margin-left: 10px
+            margin-bottom: 0.2em
+            width: 15px
+            height: 15px
+            border-bottom: 3px solid $green
+            border-right: 3px solid $green
+            animation: pulse 2s linear infinite
+        @keyframes pulse
+            0%
+                transform: scale(0.9) rotate(45deg)
+            70%
+                transform: scale(1) rotate(45deg)
+            100%
+                transform: scale(0.9) rotate(45deg)
+    &__menu
+        background-color: $light-grey
+        border-radius: 10px
+        box-shadow: 6px 19px 23px 1px rgb(0 0 0 / .15)
+        position: absolute
+        right: 20px
+        &--internal
+            right: -110px
+        & li
+            text-transform: none
+            padding: 5px
+
+// Table
+
+.table
+    border-collapse: collapse
+    width: 100%
+    text-align: center
+    &__head
+        position: sticky
+        top: 0
+
+.placeholder
+    color: $grey
+    background-color: #FFF
+    padding: 20px
+
+th
+    border: 1px solid $grey
+    padding: 12px
+    background-color: $terracotta
+    color: #FFF
+
+td
+    border: 1px solid $grey
+    padding: 8px
+    &:last-child
+        font-weight: 700
+
+tr
+    &:nth-child(odd)
+        background-color: $light-grey
+    &:last-child td
+        border-bottom: none
+        &:first-child
+            border-left: none
+        &:last-child
+            border-right: none
+    &:hover
+        background-color: $peach
+    &:last-child:hover td:first-child,
+    &:last-child td:first-child
+        border-bottom-left-radius: 10px
+    &:last-child:hover td:last-child,
+    &:last-child td:last-child
+        border-bottom-right-radius: 10px
+
+// LAPTOP
+
+@include mediumscreens
+    .title
+        width: 60%
+
+    .wrapper
+        width: 60%
+
+    .container--radio
+        display: flex
+        gap: 20px
+
+    .radio
+        text-transform: uppercase
+
+// DESKTOP
+
+@include largescreens
+    .main
+        padding: 50px 0 500px
+
+    .title
+        font-size: 50px
+        width: 80%
+
+    .wrapper
+        margin-top: 50px
+        width: 80%
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        gap: 20px
+
+    .container--radio
+        display: flex
+        gap: 20px
+
+    .radio
+        text-transform: uppercase
+
+    .container
+        width: 600px
+        &__title
+            size: 30px
