@@ -38,12 +38,13 @@
 
 //VARIABLES
 
-$green: #419F6F
-$terracotta: #B35014
 $brown: #403832
 $grey: #E4DFDC
+$green: #419F6F
 $light-grey: #f2f2f2
-$peach: #EAD3C5
+$caramel: rgba(179,80,20, .3)
+$red: #f00
+$terracotta: #B35014
 
 //NORMALIZE
 
@@ -71,14 +72,15 @@ button
 // Main common
 
 .main
-    background-image: linear-gradient(to bottom right, $terracotta, $grey)
+    background: linear-gradient(to bottom right, $terracotta, $grey)
     width: 100%
     padding: 20px
     background-size: cover
+    min-height: 100vh
 
 .wrapper
     width: 90%
-    margin: 20px auto 0
+    margin: 50px auto 0
 
 .container
     width: 100%
@@ -94,15 +96,24 @@ button
     &--underlined
         border-bottom: 1px solid $grey
         padding: 20px
-    &--flex-end
-        display: flex
-        justify-content: flex-end
+    &--with-top-border
+        border-top: 1px solid $grey
+        padding: 20px
+        position: relative
     &--calendar
         border: none
         font: inherit
         color: $brown
-        // &::-webkit-calendar-picker-indicator
-        //     display: none
+        float: right
+        cursor: pointer
+        &:hover
+            transform: scale(1.1)
+        &:disabled
+            background: none
+            transform: none
+            opacity: 0.5
+    &--result
+        text-align: right
 
 .heading
     size: 20px
@@ -127,14 +138,25 @@ button
 // Calculator
 
 .calculator
-    margin-bottom: 20px
+    margin-bottom: 50px
+    position: relative
 
-.icon
-    width: 24px
-    height: 24px
+.btn
+    position: absolute
+    top: 45px
+    right: 20px
     color: $green
+    border: solid 2px $green
+    border-radius: 10px
+    padding: 0 5px
+    font-size: 12px
+    font-weight: 700
+    &:before
+        content: "× "
+        font-size: 16px
+        vertical-align: middle
     &:hover
-        color: $terracotta
+        transform: scale(1.1)
 
 .radio
     text-transform: none
@@ -143,6 +165,8 @@ button
         margin: 0
         cursor: pointer
         accent-color: $green
+        &:disabled + .radio__label
+            opacity: 0.5
     &__label
         background: $green
         color: #FFF
@@ -150,6 +174,13 @@ button
         border-radius: 10px
         cursor: pointer
         box-shadow: 1px 1px 10px 1px rgb(0 0 0 / .15)
+
+.error
+    color: $red
+    text-transform: none
+    position: absolute
+    top: 45px
+    right: 20px
 
 .result
     font-weight: 700
@@ -161,12 +192,12 @@ button
     position: relative
     &__btn
         font-weight: 400
-        font-size: 30px
+        font-size: 25px
         color: $green
         &::after
             content: ""
             display: inline-block
-            margin-left: 10px
+            margin-left: 15px
             margin-bottom: 0.2em
             width: 15px
             height: 15px
@@ -175,29 +206,47 @@ button
             animation: pulse 2s linear infinite
         @keyframes pulse
             0%
-                transform: scale(0.9) rotate(45deg)
-            70%
                 transform: scale(1) rotate(45deg)
+            70%
+                transform: scale(1.5) rotate(45deg)
             100%
-                transform: scale(0.9) rotate(45deg)
+                transform: scale(1) rotate(45deg)
     &__menu
+        display: none
         background-color: $light-grey
         border-radius: 10px
-        box-shadow: 6px 19px 23px 1px rgb(0 0 0 / .15)
+        box-shadow: 20px 20px 20px 1px rgb(0 0 0 / .15), -2px -2px 20px 1px rgb(0 0 0 / .15)
         position: absolute
         right: 0
         z-index: 1
-        &--internal
+        text-align: left
+        &--inner
             width: 100%
-            right: 120px
+            right: 135px
+    &__submenu:after
+        content: ""
+        display: inline-block
+        margin-left: 5px
+        vertical-align: middle
+        border-top: 4px solid
+        border-right: 4px solid transparent
+        border-left: 4px solid transparent
     &__item
         text-transform: none
         padding: 5px 10px
         &:hover
-            background: $peach
+            background: $caramel
+            transition: background 0.3s linear
             border-radius: 10px
     &__label
-        cursor: pointer
+        display: block
+
+#all-days-menu
+    top: 15px
+#business-days-menu
+    top: 25px
+#weekends-menu
+    top: 35px
 
 // Table
 
@@ -213,6 +262,7 @@ button
     color: $grey
     background-color: #FFF
     padding: 20px
+    font-weight: 700
 
 th
     border: 1px solid $grey
@@ -223,7 +273,7 @@ th
 td
     border: 1px solid $grey
     padding: 8px
-    &:last-child
+    &:nth-child(3)
         font-weight: 700
 
 tr
@@ -236,7 +286,8 @@ tr
         &:last-child
             border-right: none
     &:hover
-        background-color: $peach
+        background-color: $caramel
+        transition: background 0.3s linear
     &:last-child:hover td:first-child,
     &:last-child td:first-child
         border-bottom-left-radius: 10px
@@ -264,7 +315,7 @@ tr
 
 @include largescreens
     .main
-        padding: 50px 0 500px
+        padding: 50px 0
 
     .title
         font-size: 50px
