@@ -233,7 +233,7 @@ button {
 }
 .dropdown__menu--inner {
   width: 100%;
-  right: 135px;
+  right: 109px;
 }
 .dropdown__submenu:after {
   content: "";
@@ -368,6 +368,9 @@ tr:last-child:hover td:last-child, tr:last-child td:last-child {
     width: 15px;
     height: 15px;
   }
+  .dropdown__menu--inner {
+    right: 135px;
+  }
   .result {
     font-size: 30px;
   }
@@ -420,6 +423,9 @@ tbody {
     margin-left: 15px;
     width: 15px;
     height: 15px;
+  }
+  .dropdown__menu--inner {
+    right: 135px;
   }
   .btn {
     top: 45px;
