@@ -146,7 +146,7 @@ button
     font-weight: 700
     &:before
         content: "× "
-        font-size: 16px
+        font-size: 10px
         vertical-align: middle
     &:hover
         transform: scale(1.1)
@@ -187,6 +187,7 @@ button
         font-weight: 400
         font-size: 16px
         color: $green
+        padding-right: 0px
         &::after
             content: ""
             display: inline-block
@@ -233,6 +234,8 @@ button
             border-radius: 10px
     &__label
         display: block
+    & span
+        padding-right: 10px
 
 #all-days-menu
     top: 15px
@@ -318,10 +321,13 @@ tr
     .btn
         top: 45px
         font-size: 12px
+        &:before
+            font-size: 16px
 
     .dropdown
         &__btn
             font-size: 25px
+            padding-right: 5px
             &::after
                 margin-left: 15px
                 width: 15px
@@ -373,6 +379,8 @@ tr
     .dropdown
         &__btn
             font-size: 25px
+            padding-right: 5px
+            pa
             &::after
                 margin-left: 15px
                 width: 15px
@@ -381,6 +389,8 @@ tr
     .btn
         top: 45px
         font-size: 12px
+        &:before
+            font-size: 16px
 
     .result
         font-size: 30px

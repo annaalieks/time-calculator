@@ -134,7 +134,7 @@ button {
 }
 .btn:before {
   content: "× ";
-  font-size: 16px;
+  font-size: 10px;
   vertical-align: middle;
 }
 .btn:hover {
@@ -184,6 +184,7 @@ button {
   font-weight: 400;
   font-size: 16px;
   color: #419F6F;
+  padding-right: 0px;
 }
 .dropdown__btn::after {
   content: "";
@@ -253,6 +254,9 @@ button {
 }
 .dropdown__label {
   display: block;
+}
+.dropdown span {
+  padding-right: 10px;
 }
 
 #all-days-menu {
@@ -353,8 +357,12 @@ tr:last-child:hover td:last-child, tr:last-child td:last-child {
     top: 45px;
     font-size: 12px;
   }
+  .btn:before {
+    font-size: 16px;
+  }
   .dropdown__btn {
     font-size: 25px;
+    padding-right: 5px;
   }
   .dropdown__btn::after {
     margin-left: 15px;
@@ -406,6 +414,7 @@ tbody {
   }
   .dropdown__btn {
     font-size: 25px;
+    padding-right: 5px;
   }
   .dropdown__btn::after {
     margin-left: 15px;
@@ -415,6 +424,9 @@ tbody {
   .btn {
     top: 45px;
     font-size: 12px;
+  }
+  .btn:before {
+    font-size: 16px;
   }
   .result {
     font-size: 30px;
