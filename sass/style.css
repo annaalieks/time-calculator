@@ -3,7 +3,7 @@
   font-family: "Basis Grotesque Pro";
   src: url("../fonts/BasisGrotesquePro-Regular.woff2") format("woff2"), url("./fonts/BasisGrotesquePro-Regular.woff") format("woff"), url("./fonts/BasisGrotesquePro-Regular.eot") format("embedded opentype"), url("./fonts/BasisGrotesquePro-Regular.ttf") format("truetype");
   font-weight: 400;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 24px;
   font-display: fallback;
 }
@@ -11,14 +11,6 @@
   font-family: "Basis Grotesque Pro";
   src: url("../fonts/BasisGrotesquePro-Bold.woff2") format("woff2"), url("./fonts/BasisGrotesquePro-Bold.woff") format("woff"), url("./fonts/BasisGrotesquePro-Bold.eot") format("embedded opentype"), url("./fonts/BasisGrotesquePro-Bold.ttf") format("truetype");
   font-weight: 700;
-  font-display: fallback;
-}
-@font-face {
-  font-family: "Basis Grotesque Pro";
-  src: url("../fonts/BasisGrotesquePro-Light.woff2") format("woff2"), url("./fonts/BasisGrotesquePro-Light.woff") format("woff"), url("./fonts/BasisGrotesquePro-Light.eot") format("embedded opentype"), url("./fonts/BasisGrotesquePro-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 24px;
   font-display: fallback;
 }
 *, *:before, *:after {
@@ -29,6 +21,7 @@ body {
   margin: 0;
   font-family: "Basis Grotesque Pro", system-ui;
   font-weight: 400;
+  font-size: 12px;
   color: #403832;
   min-width: 380px;
 }
@@ -103,7 +96,7 @@ button {
 }
 
 .heading {
-  size: 18px;
+  font-size: 16px;
   text-align: center;
   padding: 20px 10px;
   margin: 0;
@@ -115,7 +108,7 @@ button {
   border-radius: 10px;
   font-family: "Basis Grotesque Pro", system-ui;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 20px;
   padding: 20px 20px;
   width: 90%;
   margin: 0 auto;
@@ -130,13 +123,13 @@ button {
 
 .btn {
   position: absolute;
-  top: 45px;
+  top: 35px;
   right: 20px;
   color: #419F6F;
   border: solid 2px #419F6F;
   border-radius: 10px;
   padding: 0 5px;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 700;
 }
 .btn:before {
@@ -179,7 +172,7 @@ button {
 
 .result {
   font-weight: 700;
-  font-size: 30px;
+  font-size: 16px;
   color: #419F6F;
 }
 
@@ -189,16 +182,16 @@ button {
 }
 .dropdown__btn {
   font-weight: 400;
-  font-size: 25px;
+  font-size: 16px;
   color: #419F6F;
 }
 .dropdown__btn::after {
   content: "";
   display: inline-block;
-  margin-left: 15px;
+  margin-left: 10px;
   margin-bottom: 0.2em;
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   border-bottom: 3px solid #419F6F;
   border-right: 3px solid #419F6F;
   -webkit-animation: pulse 2s linear infinite;
@@ -336,8 +329,15 @@ tr:last-child:hover td:last-child, tr:last-child td:last-child {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1200px) {
+  body {
+    font-size: 16px;
+  }
   .title {
+    font-size: 30px;
     width: 60%;
+  }
+  .heading {
+    font-size: 24px;
   }
   .wrapper {
     width: 60%;
@@ -349,18 +349,39 @@ tr:last-child:hover td:last-child, tr:last-child td:last-child {
   .radio {
     text-transform: uppercase;
   }
+  .btn {
+    top: 45px;
+    font-size: 12px;
+  }
+  .dropdown__btn {
+    font-size: 25px;
+  }
+  .dropdown__btn::after {
+    margin-left: 15px;
+    width: 15px;
+    height: 15px;
+  }
+  .result {
+    font-size: 30px;
+  }
   .table__head,
 tbody {
     font-size: 16px;
   }
 }
 @media only screen and (min-width: 1200px) {
+  body {
+    font-size: 16px;
+  }
   .main {
     padding: 50px 0;
   }
   .title {
     font-size: 50px;
     width: 80%;
+  }
+  .heading {
+    font-size: 24px;
   }
   .wrapper {
     margin-top: 50px;
@@ -382,6 +403,21 @@ tbody {
   }
   .container__title {
     size: 30px;
+  }
+  .dropdown__btn {
+    font-size: 25px;
+  }
+  .dropdown__btn::after {
+    margin-left: 15px;
+    width: 15px;
+    height: 15px;
+  }
+  .btn {
+    top: 45px;
+    font-size: 12px;
+  }
+  .result {
+    font-size: 30px;
   }
   .table__head,
 tbody {
