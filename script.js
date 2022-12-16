@@ -463,7 +463,7 @@ function setTableView() {
 };
 
 // Uploading saved history into the table (if it is available) and updating the table with the new calculating results from the local storage
-localStorage.clear();
+
 function displayHistory() {
 
     setTableView();
