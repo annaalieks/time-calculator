@@ -519,3 +519,5 @@ function addToLocalStorage() {
     
     displayHistory();
 };
+
+localStorage.clear();
