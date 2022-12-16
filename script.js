@@ -463,14 +463,15 @@ function setTableView() {
 };
 
 // Uploading saved history into the table (if it is available) and updating the table with the new calculating results from the local storage
-
+localStorage.clear();
 function displayHistory() {
 
     setTableView();
 
     let x = history.rows.length;
-    while(x--) {
+    while (x--) {
         history.deleteRow(x);
+        console.log(x)
     };
 
     if (historyArray.length > 10) {
